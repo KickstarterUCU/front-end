@@ -137,7 +137,6 @@ window.addEventListener('load', function () {
     if (typeof web3 !== 'undefined') {
         // Use Mist/MetaMask's provider
         web3js = new Web3(web3.currentProvider);
-
     } else {
         // Handle the case where the user doesn't have web3. Probably
         // show them a message telling them to install Metamask in
@@ -148,25 +147,31 @@ window.addEventListener('load', function () {
     }
 
     // Now you can start your app & access web3js freely:
-    main()
 });
 
-
-const main = () => {
+const sendTransaction = () => {
+    const addr = '0x9e8bc022bce15fc0c3af0fdb32c3fb08adc68740';
+    const amount = 2;
+    const amountToSend = web3js.toWei(amount, "ether");
+    const gasLimit = 200000;
+    const gasPrice = web3js.toWei(150, 'gwei');
+    const to = '0xb69196cd88ea487c8e3b7afcaa45bc8fb9d41fe5';
     const myContract = web3js.eth.contract(myABI).at(myContractAddress);
-    console.log(myContract);
-    myContract.owner.call((err, res) => {
-        if (!err) {
-            console.log(res);
-        }
-        return res;
-    });
-    myContract.balanceOf.call("0x6e9b930326daf218db40a283e20fd03ff9558543", (err, res) => {
-        if (!err) {
-            console.log(res);
-        }
-        return res;
-    })
+    myContract.pay.sendTransaction(
+        to,
+        amountToSend,
+        {
+            from: addr,
+            gas: gasLimit,
+            gasPrice: web3js.toHex(gasPrice)
+        },
+        (err, res) => {
+            if (!err) {
+                console.log('res', res);
+            }
+            return res;
+        });
 };
 
+document.getElementById("send-btn").addEventListener("click", sendTransaction);
 
