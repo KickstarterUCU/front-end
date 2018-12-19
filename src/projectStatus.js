@@ -10,6 +10,8 @@ export const projectStatus = (contract, id, entryPoint) => {
     });
 
 
+
+
     const renderProject = (res) => {
         console.log(res);
         let all_projects = entryPoint.querySelector(".all_projects");

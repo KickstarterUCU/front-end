@@ -1,11 +1,10 @@
 export const sendTransaction = (contract, web3js) => {
-    const addr = '0xA6c1429C546D05994258bba4dE91042E62996262';
-    const amountToSend = 200;
+    const amountToSend = 100;
     const gasLimit = 200000;
     const gasPrice = web3js.toWei(150, 'gwei');
-    const to = '0x6e9b930326daf218db40a283e20fd03ff9558543';
+    const to = 1;
 
-    contract.pay.sendTransaction(
+    contract.donate.sendTransaction(
         to,
         amountToSend,
         {
@@ -13,9 +12,8 @@ export const sendTransaction = (contract, web3js) => {
             gasPrice: web3js.toHex(gasPrice)
         },
         (err, res) => {
-            if (!err) {
+            if (!err)
                 console.log('res', res);
-            }
             return res;
         });
 };
