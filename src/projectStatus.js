@@ -14,9 +14,11 @@ export const projectStatus = (contract, id, entryPoint) => {
         console.log(res);
         let all_projects = entryPoint.querySelector(".all_projects");
         all_projects.innerHTML += "<div class='project'>" +
-            "<h2 class='project__owner'>" + res['address'] + "</h2>" +
+            "<h3 class='project__owner'>" +" Owner's address: <span class='project__owner-address'>" +  res['address']+"</span></h3>" +
             "<img class='project__img' src='https://cdn-images-1.medium.com/max/1131/1*9Bz1AgYPjC5snJb4395rGw.jpeg'>" +
-            "<p class='project__gathered'>Gathered amount: " + res['gatheredAmount'] + "</p>" +
-            "<p class='project__required'>Required amount: " + res['requiredAmount'] + "</p></div>";
+            "<div class='project_info'><p class='project__gathered'>Gathered amount: " +res['gatheredAmount'] + "</p>" +
+            "<p class='project__required'>Required amount: " +res['requiredAmount'] + "</p>" +
+            "<button class='project__donate-btn'>Donate</button></div></div>";
+
     }
 };
