@@ -1,0 +1,33 @@
+.main{
+    margin: auto;
+}
+.project{
+    width: 50%;
+    float: left;
+}
+.project_info{
+    width: 50%;
+    float: right;
+}
+.project__owner{
+    text-align: center;
+}
+.project__owner-address{
+    font-size: 14px;
+    font-weight: lighter;
+}
+.project__gathered{
+    padding-left: 20%;
+}
+.project__required{
+    padding-left: 20%;
+}
+.project__img{
+    width: 45%;
+    margin-left: 10px;
+}
+.project__donate-btn{
+    margin-left: 20%;
+    width: 30%;
+    height: 40px;
+}
