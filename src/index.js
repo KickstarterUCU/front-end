@@ -13,8 +13,11 @@ window.addEventListener('load', () => {
 });
 
 const main = (contract, web3js) => {
-    document.getElementById("send-btn").addEventListener("click", sendTransaction.bind(this, contract, web3js));
-    document.getElementById("check-btn").addEventListener("click", projectStatus.bind(this, contract, config.projectId, document.getElementById("main")));
+    const ids = [1, 1, 1];
+    const entryPoint = document.getElementById("main");
+    ids.map((id) => projectStatus(contract, id, entryPoint));
+
+
 };
 
 
