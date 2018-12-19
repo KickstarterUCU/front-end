@@ -1,59 +1,21 @@
 export default {
     myABI: [
         {
-            "constant": true,
+            "constant": false,
             "inputs": [
                 {
-                    "name": "owner",
-                    "type": "address"
-                }
-            ],
-            "name": "balanceOf",
-            "outputs": [
+                    "name": "to",
+                    "type": "uint256"
+                },
                 {
-                    "name": "",
+                    "name": "value",
                     "type": "uint256"
                 }
             ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [],
-            "name": "renounceOwnership",
+            "name": "donate",
             "outputs": [],
             "payable": false,
             "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "owner",
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "address"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "isOwner",
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "bool"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
             "type": "function"
         },
         {
@@ -69,6 +31,15 @@ export default {
                 }
             ],
             "name": "pay",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [],
+            "name": "renounceOwnership",
             "outputs": [],
             "payable": false,
             "stateMutability": "nonpayable",
@@ -99,8 +70,8 @@ export default {
             "inputs": [
                 {
                     "indexed": false,
-                    "name": "_to",
-                    "type": "address"
+                    "name": "id",
+                    "type": "uint256"
                 },
                 {
                     "indexed": false,
@@ -108,7 +79,7 @@ export default {
                     "type": "uint256"
                 }
             ],
-            "name": "BalanceUpdate",
+            "name": "ProjectUpdate",
             "type": "event"
         },
         {
@@ -127,7 +98,82 @@ export default {
             ],
             "name": "OwnershipTransferred",
             "type": "event"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "owner",
+                    "type": "address"
+                }
+            ],
+            "name": "balanceOf",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "isOwner",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "id",
+                    "type": "uint256"
+                }
+            ],
+            "name": "projectStatus",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
         }
     ],
-    myContractAddress: "0xb69196cd88ea487c8e3b7afcaa45bc8fb9d41fe5"
+    myContractAddress: "0xf168943410961cad0daa0ab47e05c9ccf2b00165",
+    projectId: 1
 }

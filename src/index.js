@@ -1,5 +1,5 @@
 import config from "./config";
-import {balanceOf} from "./balanceOf";
+import {projectStatus} from "./projectStatus";
 import {sendTransaction} from "./pay";
 
 window.addEventListener('load', () => {
@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
 
 const main = (contract, web3js) => {
     document.getElementById("send-btn").addEventListener("click", sendTransaction.bind(this, contract, web3js));
-    document.getElementById("check-btn").addEventListener("click", balanceOf.bind(this, contract));
+    document.getElementById("check-btn").addEventListener("click", projectStatus.bind(this, contract, config.projectId, document.getElementById("main")));
 };
 
 
