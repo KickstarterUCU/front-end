@@ -1,6 +1,6 @@
 import config from "./config";
 import {projectStatus} from "./projectStatus";
-import {sendTransaction} from "./pay";
+import {donate} from "./pay";
 
 window.addEventListener('load', () => {
     let contract, web3js;
@@ -16,7 +16,7 @@ const main = (contract, web3js) => {
     const ids = [1, 1, 1];
     const entryPoint = document.getElementById("main");
     ids.map((id) => projectStatus(contract, id, entryPoint));
-    document.getElementById("send-btn").addEventListener("click", sendTransaction.bind(this, contract, web3js));
+    document.getElementById("send-btn").addEventListener("click", donate.bind(this, contract, web3js, ids[0]));
 
 
 };
