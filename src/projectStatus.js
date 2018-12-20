@@ -4,7 +4,8 @@ export const projectStatus = (contract, id, entryPoint) => {
             renderProject({
                 address: res[0],
                 gatheredAmount: res[1].toNumber(),
-                requiredAmount: res[2].toNumber()
+                requiredAmount: res[2].toNumber(),
+                active: res[3]
             });
         }
     });

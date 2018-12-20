@@ -4,6 +4,24 @@ export default {
             "constant": false,
             "inputs": [
                 {
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "name": "requiredAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "createProject",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
                     "name": "to",
                     "type": "uint256"
                 },
@@ -69,23 +87,6 @@ export default {
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
-                    "name": "id",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "name": "_value",
-                    "type": "uint256"
-                }
-            ],
-            "name": "ProjectUpdate",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
                     "indexed": true,
                     "name": "previousOwner",
                     "type": "address"
@@ -108,6 +109,20 @@ export default {
                 }
             ],
             "name": "balanceOf",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "getProjectIds",
             "outputs": [
                 {
                     "name": "",
@@ -167,6 +182,10 @@ export default {
                 {
                     "name": "",
                     "type": "uint256"
+                },
+                {
+                    "name": "",
+                    "type": "bool"
                 }
             ],
             "payable": false,
@@ -174,6 +193,5 @@ export default {
             "type": "function"
         }
     ],
-    myContractAddress: "0xf168943410961cad0daa0ab47e05c9ccf2b00165",
-    projectId: 1
+    myContractAddress: "0x38c8f63f19d5387fc83cf3e31396bffc07e0748c"
 }
