@@ -21,7 +21,7 @@ const main = (contract, web3js) => {
     contract.getProjectIds.call((err, res) => {
         if (!err) {
             ids = new Array(res.toNumber()).fill(0).map((_, i) => i);
-            ids.map((id) => projectStatus(contract, id, entryPoint));
+            ids.map((id) => projectStatus(contract, id, entryPoint, web3js));
             document.getElementById("send-btn").addEventListener("click", donate.bind(this, contract, web3js, ids[0]));
         }
     });

@@ -1,23 +1,38 @@
-export const projectStatus = (contract, id, entryPoint) => {
+import {donate} from './donate';
+
+console.log(donate);
+export const projectStatus = (contract, id, entryPoint, web3js) => {
     contract.projectStatus.call(id, (err, res) => {
         if (!err) {
             renderProject({
                 address: res[0],
                 gatheredAmount: res[1].toNumber(),
                 requiredAmount: res[2].toNumber(),
-                active: res[3]
+                active: res[3],
+                projectId: id,
             });
         }
     });
 
 
     const renderProject = (res) => {
-        console.log(res);
         let all_projects = entryPoint.querySelector(".all_projects");
         const projectImg = 'https://ww2.kqed.org/wp-content/uploads/sites/23/2015/11/PBL-1920x1179.jpg';
-        all_projects.innerHTML +=
-            `<div class='project'>
-                <div style="background: url(${projectImg}) no-repeat;
+
+        const buttonDonate = document.createElement('button');
+        buttonDonate.innerHTML = 'Donate';
+        buttonDonate.setAttribute('class', 'project__button');
+        buttonDonate.addEventListener('click', donate.bind(this, contract, web3js, id));
+
+        const projectButtons = document.createElement('div');
+        projectButtons.setAttribute('class', 'project__buttons');
+        projectButtons.innerHTML= `
+        <button class="project__button">View more</button>`;
+        projectButtons.appendChild(buttonDonate);
+
+        const project = document.createElement('div');
+        project.setAttribute("class", "project");
+        project.innerHTML = `<div style="background: url(${projectImg}) no-repeat;
                             background-size: cover;
                             height: 200px;
                             background-position: center;">
@@ -33,11 +48,8 @@ export const projectStatus = (contract, id, entryPoint) => {
                         <span class="project__money-info">Earned:</span>
                         <span>${res['gatheredAmount']}</span>
                     </div>
-                </section>
-                <div class="project__buttons">
-                    <button class="project__button">View details</button>
-                    <button class="project__button">Donate</button>
-                </div>
-            </div>`;
+                </section>`;
+        project.appendChild(projectButtons);
+        all_projects.appendChild(project);
     }
 };
