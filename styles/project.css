@@ -1,41 +1,89 @@
-.main {
+#main {
     margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.all_projects {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 800px) {
+    .all_projects {
+        flex-wrap: nowrap;
+    }
 }
 
 .project {
-    width: 50%;
-    float: left;
+    display: flex;
+    border: 1px solid lightgrey;
+    flex-direction: column;
+    padding-bottom: 15px;
+    margin: 15px;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
 
-.project_info {
-    width: 50%;
-    float: right;
+.project__description {
+    color: #777;
+    clear: both;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
-.project__owner {
-    text-align: center;
+.project__buttons {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 15px;
 }
 
-.project__owner-address {
-    font-size: 14px;
-    font-weight: lighter;
-}
-
-.project__gathered {
-    padding-left: 20%;
-}
-
-.project__required {
-    padding-left: 20%;
-}
-
-.project__img {
-    width: 45%;
-    margin-left: 10px;
-}
-
-.project__donate-btn {
-    margin-left: 20%;
+.project__button {
     width: 30%;
     height: 40px;
+    border: 1px solid #d5d5d5;
+    color: #979797;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
+}
+
+.project__button:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    color: rgba(64, 63, 63, 0.91);
+}
+
+.project__button:focus {
+    outline: 0;
+}
+
+.project__title {
+    color: #777;
+    float: left;
+    margin-top: -48px;
+}
+
+.project__info {
+    padding: 10px 15px;
+}
+
+.project__money_required {
+    color: #41954d;
+}
+
+.project__money_earned {
+    color: #000;
+}
+
+.project__money_earned, .project__money_required {
+    margin: 10px 0;
+}
+
+.project__money-info {
+    font-weight: bold;
 }
