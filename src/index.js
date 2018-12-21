@@ -1,6 +1,7 @@
 import config from "./config";
 import {projectStatus} from "./projectStatus";
-import {donate} from "./pay";
+import {donate} from "./donate";
+import {createProject} from "./createProject";
 
 window.addEventListener('load', () => {
     let contract, web3js;
@@ -13,13 +14,20 @@ window.addEventListener('load', () => {
 });
 
 const main = (contract, web3js) => {
-    const ids = [1, 1, 1];
     const entryPoint = document.getElementById("main");
-    ids.map((id) => projectStatus(contract, id, entryPoint));
-    document.getElementById("send-btn").addEventListener("click", donate.bind(this, contract, web3js, ids[0]));
+
+    let ids;
+
+    contract.getProjectIds.call((err, res) => {
+        if (!err) {
+            ids = new Array(res.toNumber()).fill(0).map((_, i) => i);
+            ids.map((id) => projectStatus(contract, id, entryPoint, web3js));
+            document.getElementById("send-btn").addEventListener("click", donate.bind(this, contract, web3js, ids[0]));
+        }
+    });
+
+    document.getElementById("create-btn").addEventListener("click", createProject.bind(this, contract, web3js, "0xa6c1429c546d05994258bba4de91042e62996262", 350));
     document.getElementById("add-btn").addEventListener("click", () => window.location.href = 'newProject.html');
-
-
 };
 
 

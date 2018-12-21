@@ -8,9 +8,9 @@ const onSubmit = () => {
 
     if (validation(obj)) {
         document.getElementById("form_id").submit();
-        alert('Form submitted successfully!')
+        alert('Form submitted successfully!');
+        window.location.href = 'index.html';
     }
-    window.location.href = 'index.html'
 };
 
 const validation = obj => {
