@@ -1,15 +1,19 @@
+body {
+    margin: 0;
+}
+
 #main {
     margin: auto;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.all_projects {
+.all-projects {
     display: flex;
     flex-wrap: wrap;
 }
 
 @media screen and (min-width: 800px) {
-    .all_projects {
+    .all-projects {
         flex-wrap: nowrap;
     }
 }
@@ -65,7 +69,10 @@
 .project__title {
     color: #777;
     float: left;
-    margin-top: -48px;
+    margin-top: -56px;
+    background-color: white;
+    padding: 4px 8px;
+    border-radius: 3px;
 }
 
 .project__info {
@@ -86,4 +93,62 @@
 
 .project__money-info {
     font-weight: bold;
+}
+
+/*==========================================*/
+
+.project-template {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.label {
+    font-size: 20px;
+    color: #006282;
+    font-weight: bold;
+    display: block;
+}
+
+.field {
+    margin-top: 10px;
+}
+
+#description {
+    outline: none;
+    resize: none;
+}
+
+input[type=text], #description, #funds {
+    width: 450px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #979797
+}
+
+.project__button_submit {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.project__button_submit:hover {
+    color: #000;
+    background-color: #41954d;
+    opacity: 0.6;
+}
+
+.project__button_add {
+    font-size: 30px;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    text-decoration: none;
 }

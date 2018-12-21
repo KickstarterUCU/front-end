@@ -17,6 +17,7 @@ const main = (contract, web3js) => {
     const entryPoint = document.getElementById("main");
     ids.map((id) => projectStatus(contract, id, entryPoint));
     document.getElementById("send-btn").addEventListener("click", donate.bind(this, contract, web3js, ids[0]));
+    document.getElementById("add-btn").addEventListener("click", () => window.location.href = 'newProject.html');
 
 
 };
