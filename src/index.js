@@ -1,7 +1,7 @@
 import config from "./config";
 import {projectStatus} from "./projectStatus";
 import {donate} from "./donate";
-import {createProject} from "./createProject";
+// import {createProject} from "./createProject";
 
 window.addEventListener('load', () => {
     let contract, web3js;
@@ -26,7 +26,7 @@ const main = (contract, web3js) => {
         }
     });
 
-    document.getElementById("create-btn").addEventListener("click", createProject.bind(this, contract, web3js, "0xa6c1429c546d05994258bba4de91042e62996262", 350));
+    // document.getElementById("create-btn").addEventListener("click", createProject.bind(this, contract, web3js, "0xa6c1429c546d05994258bba4de91042e62996262", 350));
     document.getElementById("add-btn").addEventListener("click", () => window.location.href = 'newProject.html');
 };
 
