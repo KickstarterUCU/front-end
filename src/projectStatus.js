@@ -1,6 +1,6 @@
 import {donate} from './donate';
 
-console.log(donate);
+
 export const projectStatus = (contract, id, entryPoint, web3js) => {
     contract.projectStatus.call(id, (err, res) => {
         if (!err) {
@@ -16,6 +16,7 @@ export const projectStatus = (contract, id, entryPoint, web3js) => {
 
 
     const renderProject = (res) => {
+        console.log(res.active);
         let all_projects = entryPoint.querySelector(".all-projects");
         const projectImg = 'https://ww2.kqed.org/wp-content/uploads/sites/23/2015/11/PBL-1920x1179.jpg';
 

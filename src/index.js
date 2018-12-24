@@ -22,12 +22,10 @@ const main = (contract, web3js) => {
         if (!err) {
             ids = new Array(res.toNumber()).fill(0).map((_, i) => i);
             ids.map((id) => projectStatus(contract, id, entryPoint, web3js));
-            document.getElementById("send-btn").addEventListener("click", donate.bind(this, contract, web3js, ids[0]));
         }
     });
 
-    document.getElementById("create-btn").addEventListener("click", createProject.bind(this, contract, web3js, "0xa6c1429c546d05994258bba4de91042e62996262", 350));
-    document.getElementById("add-btn").addEventListener("click", () => window.location.href = 'newProject.html');
+    document.getElementById("add-btn").addEventListener("click", () => window.location.href = 'project.html');
 };
 
 
