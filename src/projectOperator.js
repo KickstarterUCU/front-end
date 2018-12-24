@@ -22,7 +22,6 @@ export const fetchProjectStatus = (contract, id) =>
 export const createProject = (contract, web3js, owner, requiredAmount) => {
     const gasLimit = 2000000;
     const gasPrice = web3js.toWei(150, 'gwei');
-    console.log(owner, requiredAmount);
     contract.createProject.sendTransaction(
         owner,
         requiredAmount,
@@ -35,8 +34,6 @@ export const createProject = (contract, web3js, owner, requiredAmount) => {
             return res;
         });
 };
-
-
 
 
 export const renderProject = (contract, web3js, res, entryPoint) => {
