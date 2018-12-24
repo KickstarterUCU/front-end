@@ -1,5 +1,5 @@
 import config from "./config";
-import {createProject} from "./createProject";
+import {createProject} from "./projectOperator";
 
 const submitButton = document.getElementById("submit-btn");
 let contract, web3js;
@@ -11,7 +11,6 @@ window.addEventListener('load', () => {
         contract = web3js.eth.contract(config.myABI).at(config.myContractAddress);
     } else {
     } // Handle the case where the user doesn't have web3. No MetaMask
-    // main(contract, web3js);
 });
 
 const onSubmit = () => {
@@ -25,7 +24,6 @@ const onSubmit = () => {
 
     if (validation(obj)) {
         createProject(contract, web3js, owner, funds);
-
     }
     else alert("Please fill all fields!");
 

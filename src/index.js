@@ -1,7 +1,7 @@
 import config from "./config";
-import {projectStatus} from "./projectStatus";
+import {fetchProjectStatus, renderProject, fetchProjectIds} from "./projectOperator";
 import {donate} from "./donate";
-import {createProject} from "./createProject";
+
 
 window.addEventListener('load', () => {
     let contract, web3js;
@@ -13,17 +13,15 @@ window.addEventListener('load', () => {
     main(contract, web3js);
 });
 
-const main = (contract, web3js) => {
+
+const main = async (contract, web3js) => {
     const entryPoint = document.getElementById("main");
 
-    let ids;
+    const id = await fetchProjectIds(contract);
+    const ids = new Array(id).fill(0).map((_, i) => i);
 
-    contract.getProjectIds.call((err, res) => {
-        if (!err) {
-            ids = new Array(res.toNumber()).fill(0).map((_, i) => i);
-            ids.map((id) => projectStatus(contract, id, entryPoint, web3js));
-        }
-    });
+    const projects = await Promise.all(ids.map((id) => fetchProjectStatus(contract, id)));
+    projects.map((el) => renderProject(contract, web3js, el, entryPoint));
 
     document.getElementById("add-btn").addEventListener("click", () => window.location.href = 'project.html');
 };
