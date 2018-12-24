@@ -1,6 +1,5 @@
 import config from "./config";
 import {fetchProjectStatus, renderProject, fetchProjectIds} from "./projectOperator";
-import {donate} from "./donate";
 
 
 window.addEventListener('load', () => {
