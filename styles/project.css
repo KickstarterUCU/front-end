@@ -17,11 +17,21 @@ body {
     background: aliceblue;
     align-items: center;
     padding: 0 20px;
-    color: #004f69;;
+    color: #004f69;
+
 }
 
-@media screen and (min-width: 800px) {
+.kickstarter-header__title {
+    text-decoration: none;
+}
 
+.kickstarter-header__title:visited {
+    color: #3B506A;
+    text-decoration: none;
+}
+
+.kickstarter-header__title:active {
+    text-decoration: none;
 }
 
 .project {

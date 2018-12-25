@@ -4,7 +4,7 @@ export const renderHeader = () =>{
 
 const header = () => {
     return `<header class="kickstarter-header">
-                <h1 class="kickstarter-header__title">Kickstarter</h1>
+                <a href="index.html" class="kickstarter-header__title"><h1 >Kickstarter</h1></a>
                 <button id="add-btn" class="project__button project__button_add">Create project</button>
             </header>`
 }
