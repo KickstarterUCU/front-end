@@ -59,6 +59,7 @@ export const renderProject = (contract, web3js, res, entryPoint) => {
                             height: 200px;
                             background-position: center;">
                 </div>
+                <h1 class="project_earned">MONEY EARNED</h1>
                 <section class="project__info">
                     <h1 class="project__title">Title</h1 class="project__title">
                     <div class="project__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</div>
@@ -71,6 +72,13 @@ export const renderProject = (contract, web3js, res, entryPoint) => {
                         <span>${res['gatheredAmount']}</span>
                     </div>
                 </section>`;
-    project.appendChild(projectButtons);
+    if(active)project.appendChild(projectButtons);
     all_projects.appendChild(project);
+    if(!active){
+        let activeProject = document.querySelectorAll(".project_earned");
+        activeProject[activeProject.length-1].style.visibility = 'initial';
+        let activeProjectInfo = document.querySelectorAll(".project__info");
+        activeProjectInfo[activeProjectInfo.length-1].style.opacity = 0.1;
+    }
+
 };

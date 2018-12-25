@@ -13,19 +13,42 @@ body {
 }
 
 @media screen and (min-width: 800px) {
-    .all-projects {
-        flex-wrap: nowrap;
-    }
+
 }
 
 .project {
+    width: 300px;
     display: flex;
     border: 1px solid lightgrey;
     flex-direction: column;
     padding-bottom: 15px;
-    margin: 15px;
+    margin: 15px auto;
     border-radius: 3px;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+.project_earned{
+    font-size: 25px;
+    margin-top: 155px;
+    margin-left: 40px;
+    padding: 15px;
+    background-color: tomato;
+    position: absolute;
+    visibility: hidden;
+    /* Safari */
+    -webkit-transform: rotate(-45deg);
+
+    /* Firefox */
+    -moz-transform: rotate(-45deg);
+
+    /* IE */
+    -ms-transform: rotate(-45deg);
+
+    /* Opera */
+    -o-transform: rotate(-45deg);
+
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
 .project__description {
