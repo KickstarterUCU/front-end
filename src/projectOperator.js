@@ -43,7 +43,7 @@ export const renderProject = (contract, web3js, res, entryPoint) => {
 
     const buttonDonate = document.createElement('button');
     buttonDonate.innerHTML = 'Donate';
-    buttonDonate.setAttribute('class', 'project__button');
+    buttonDonate.setAttribute('class','project__button project__button_donate');
     buttonDonate.addEventListener('click', donate.bind(this, contract, web3js, projectId));
 
     const projectButtons = document.createElement('div');
@@ -72,13 +72,15 @@ export const renderProject = (contract, web3js, res, entryPoint) => {
                         <span>${res['gatheredAmount']}</span>
                     </div>
                 </section>`;
-    if(active)project.appendChild(projectButtons);
+    project.appendChild(projectButtons);
     all_projects.appendChild(project);
     if(!active){
         let activeProject = document.querySelectorAll(".project_earned");
         activeProject[activeProject.length-1].style.visibility = 'initial';
         let activeProjectInfo = document.querySelectorAll(".project__info");
         activeProjectInfo[activeProjectInfo.length-1].style.opacity = 0.1;
+        let activeDonation = document.querySelectorAll(".project__button_donate");
+        activeDonation[activeDonation.length-1].style.display = 'none';
     }
 
 };
