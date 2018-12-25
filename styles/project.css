@@ -1,15 +1,23 @@
 body {
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #main {
     margin: auto;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .all-projects {
     display: flex;
     flex-wrap: wrap;
+}
+.kickstarter-header{
+    display: flex;
+    justify-content: space-between;
+    background: aliceblue;
+    align-items: center;
+    padding: 0 20px;
+    color: #004f69;;
 }
 
 @media screen and (min-width: 800px) {
@@ -145,10 +153,7 @@ input::placeholder, textarea::placeholder {
 }
 
 .project__button_add {
-    font-size: 30px;
-    font-weight: bold;
-    width: 50px;
-    height: 50px;
-    margin: 15px;
+    font-size: 20px;
+    width: 200px;
     text-decoration: none;
 }

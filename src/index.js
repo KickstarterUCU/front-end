@@ -1,8 +1,9 @@
 import config from "./config";
 import {fetchProjectStatus, renderProject, fetchProjectIds} from "./projectOperator";
-
+import {renderHeader} from "./header";
 
 window.addEventListener('load', () => {
+    renderHeader();
     let contract, web3js;
     if (typeof web3 !== 'undefined') {
         web3js = new Web3(web3.currentProvider);
@@ -20,6 +21,7 @@ const main = async (contract, web3js) => {
     const ids = new Array(id).fill(0).map((_, i) => i);
 
     const projects = await Promise.all(ids.map((id) => fetchProjectStatus(contract, id)));
+
     projects.map((el) => renderProject(contract, web3js, el, entryPoint));
 
     document.getElementById("add-btn").addEventListener("click", () => window.location.href = 'project.html');
