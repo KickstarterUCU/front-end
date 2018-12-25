@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #fefcf0;
 }
 
 #main {
@@ -14,7 +15,7 @@ body {
 .kickstarter-header{
     display: flex;
     justify-content: space-between;
-    background: aliceblue;
+    background: #000000;
     align-items: center;
     padding: 0 20px;
     color: #004f69;
@@ -23,11 +24,15 @@ body {
 
 .kickstarter-header__title {
     text-decoration: none;
+    color: #ffffff;
 }
 
 .kickstarter-header__title:visited {
-    color: #3B506A;
+    color: #ffffff;
     text-decoration: none;
+}
+.kickstarter-header__title:hover {
+    color: #51a299;
 }
 
 .kickstarter-header__title:active {
@@ -88,19 +93,20 @@ body {
 .project__button {
     width: 30%;
     height: 40px;
-    border: 1px solid #d5d5d5;
-    color: #979797;
+    border: none;
+    color: #ffffff;
+    background-color: #51a299;
     cursor: pointer;
     border-radius: 8px;
     font-size: 12px;
     font-weight: bold;
-    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
 }
 
 .project__button:hover {
-    background-color: rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
     text-decoration: none;
-    color: rgba(64, 63, 63, 0.91);
+    color: #51a299;
 }
 
 .project__button:focus {
@@ -165,13 +171,14 @@ input[type=text], #description, #funds {
     width: 450px;
     padding: 12px 20px;
     margin: 8px 0;
-    border: 1px solid #d5d5d5;
     border-radius: 3px;
     box-sizing: border-box;
+    border: 1px solid #51a299;
+
 }
 
 input::placeholder, textarea::placeholder {
-    color: #979797
+    color: #979797;
 }
 
 .project__button_submit {
