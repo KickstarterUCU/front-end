@@ -1,0 +1,26 @@
+.kickstarter-header{
+    display: flex;
+    justify-content: space-between;
+    background: #000000;
+    align-items: center;
+    padding: 0 20px;
+    color: #004f69;
+
+}
+
+.kickstarter-header__title {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.kickstarter-header__title:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+.kickstarter-header__title:hover {
+    color: #51a299;
+}
+
+.kickstarter-header__title:active {
+    text-decoration: none;
+}

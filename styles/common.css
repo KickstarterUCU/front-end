@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fefcf0;
+}
+
+#main {
+    margin: auto;
+}
+
+.label {
+    font-size: 20px;
+    color: #006282;
+    font-weight: bold;
+    display: block;
+}
+
+.field {
+    margin-top: 10px;
+}
+
+#description {
+    outline: none;
+    resize: none;
+}
+
+input[type=text], #description, #funds {
+    width: 450px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    border: 1px solid #51a299;
+
+}
+
+input::placeholder, textarea::placeholder {
+    color: #979797;
+}
+

@@ -1,42 +1,13 @@
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #fefcf0;
-}
-
-#main {
-    margin: auto;
-}
-
 .all-projects {
     display: flex;
     flex-wrap: wrap;
 }
-.kickstarter-header{
+
+.project-template {
     display: flex;
-    justify-content: space-between;
-    background: #000000;
+    flex-direction: column;
     align-items: center;
-    padding: 0 20px;
-    color: #004f69;
-
-}
-
-.kickstarter-header__title {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.kickstarter-header__title:visited {
-    color: #ffffff;
-    text-decoration: none;
-}
-.kickstarter-header__title:hover {
-    color: #51a299;
-}
-
-.kickstarter-header__title:active {
-    text-decoration: none;
+    padding-bottom: 50px;
 }
 
 .project {
@@ -58,19 +29,10 @@ body {
     background-color: tomato;
     position: absolute;
     visibility: hidden;
-    /* Safari */
     -webkit-transform: rotate(-45deg);
-
-    /* Firefox */
     -moz-transform: rotate(-45deg);
-
-    /* IE */
     -ms-transform: rotate(-45deg);
-
-    /* Opera */
     -o-transform: rotate(-45deg);
-
-    /* Internet Explorer */
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
@@ -113,6 +75,23 @@ body {
     outline: 0;
 }
 
+.project__button_submit {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.project__button_submit:hover {
+    color: #000;
+    background-color: #41954d;
+    opacity: 0.6;
+}
+
+.project__button_add {
+    font-size: 20px;
+    width: 200px;
+    text-decoration: none;
+}
+
 .project__title {
     color: #777;
     float: left;
@@ -140,60 +119,4 @@ body {
 
 .project__money-info {
     font-weight: bold;
-}
-
-/*==========================================*/
-
-.project-template {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 50px;
-}
-
-.label {
-    font-size: 20px;
-    color: #006282;
-    font-weight: bold;
-    display: block;
-}
-
-.field {
-    margin-top: 10px;
-}
-
-#description {
-    outline: none;
-    resize: none;
-}
-
-input[type=text], #description, #funds {
-    width: 450px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border-radius: 3px;
-    box-sizing: border-box;
-    border: 1px solid #51a299;
-
-}
-
-input::placeholder, textarea::placeholder {
-    color: #979797;
-}
-
-.project__button_submit {
-    width: 100%;
-    margin-top: 20px;
-}
-
-.project__button_submit:hover {
-    color: #000;
-    background-color: #41954d;
-    opacity: 0.6;
-}
-
-.project__button_add {
-    font-size: 20px;
-    width: 200px;
-    text-decoration: none;
 }
