@@ -3,7 +3,7 @@ import {fetchProjectStatus, renderProject, fetchProjectIds} from "./projectOpera
 import {renderHeader} from "./header";
 
 window.addEventListener('load', () => {
-    renderHeader();
+    renderHeader(document.getElementById("header"));
     let contract, web3js;
     if (typeof web3 !== 'undefined') {
         web3js = new Web3(web3.currentProvider);
