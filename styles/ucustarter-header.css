@@ -1,4 +1,4 @@
-.kickstarter-header{
+.ucustarter-header{
     display: flex;
     justify-content: space-between;
     background: #000000;
@@ -8,19 +8,19 @@
 
 }
 
-.kickstarter-header__title {
+.ucustarter-header__title {
     text-decoration: none;
     color: #ffffff;
 }
 
-.kickstarter-header__title:visited {
+.ucustarter-header__title:visited {
     color: #ffffff;
     text-decoration: none;
 }
-.kickstarter-header__title:hover {
+.ucustarter-header__title:hover {
     color: #51a299;
 }
 
-.kickstarter-header__title:active {
+.ucustarter-header__title:active {
     text-decoration: none;
 }

@@ -1,5 +1,7 @@
 import {donate} from './donate';
 
+
+// TODO: rewrite to class
 export const fetchProjectIds = (contract) =>
     new Promise((res, rej) =>
         contract.getProjectIds.call((err, r) =>
