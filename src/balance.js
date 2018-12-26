@@ -8,7 +8,7 @@ const balanceElement = document.getElementById("balance");
 
 let contract, web3js;
 window.addEventListener('load', () => {
-    renderHeader();
+    renderHeader(document.getElementById("header"));
     if (typeof web3 !== 'undefined') {
         web3js = new Web3(web3.currentProvider);
         contract = web3js.eth.contract(config.myABI).at(config.myContractAddress);
