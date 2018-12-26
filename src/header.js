@@ -1,5 +1,6 @@
-export const renderHeader = () =>{
-    document.body.innerHTML = header() + document.body.innerHTML;
+
+export const renderHeader = (entryPoint) =>{
+    entryPoint.innerHTML = header();
 }
 
 const header = () => {
