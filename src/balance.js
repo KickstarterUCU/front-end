@@ -24,7 +24,6 @@ const fetchBalance = (contract, address) =>
 const main = async (contract, addressElement) => {
     const balance = await fetchBalance(contract, addressElement.value);
     balanceElement.innerHTML = balance;
-    console.log(balance);
 };
 
 document.body.addEventListener("keypress", (ev) => {
